@@ -12,6 +12,9 @@ import com.micheal.micheal_application.Fragment.Message.Fragment_Message;
 import com.micheal.micheal_application.Fragment.My.Fragment_My;
 import com.micheal.micheal_application.R;
 
+/**
+ *  首页
+ */
 public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedChangeListener {
 
 
