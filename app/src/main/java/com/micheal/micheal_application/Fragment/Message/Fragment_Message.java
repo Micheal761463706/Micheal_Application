@@ -3,13 +3,17 @@ package com.micheal.micheal_application.Fragment.Message;
 import android.content.Intent;
 import android.support.v4.view.ViewPager;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 
 import com.micheal.micheal_application.Adapter.BaseFragment;
-import com.micheal.micheal_application.Entity.Constants;
 import com.micheal.micheal_application.Fragment.Message.ui.SelectCity;
 import com.micheal.micheal_application.R;
+import com.micheal.micheal_application.util.Constants;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import okhttp3.OkHttpClient;
 
@@ -26,6 +30,7 @@ public class Fragment_Message extends BaseFragment implements View.OnClickListen
     private ListView mListView; // 展示新闻的图文标题
     private OkHttpClient mClient = new OkHttpClient(); // 第三方插件 创建okHttpClient对象
 
+    private ListView aListView;//模拟数据
 
     /**
      *  获取布局id
@@ -43,7 +48,13 @@ public class Fragment_Message extends BaseFragment implements View.OnClickListen
         citySelect = (Button) view.findViewById(R.id.citySelectBtn_message);
         citySelect.setOnClickListener(this);
 //        mViewPager = (ViewPager) view.findViewById(R.id.viewPage_Message);
-
+        aListView = (ListView) view.findViewById(R.id.listView_message);
+        List<String> list = new ArrayList<>();
+        for (int i = 1; i < 20 ; i++){
+            list.add("模拟数据"+i);
+        }
+        ArrayAdapter adapter = new ArrayAdapter(getActivity(),android.R.layout.simple_list_item_1,list);
+        aListView.setAdapter(adapter);
     }
 
     /**
@@ -76,5 +87,7 @@ public class Fragment_Message extends BaseFragment implements View.OnClickListen
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+        // 设置当前城市Botton名称
+        citySelect.setText(data.getStringExtra(String.valueOf(Constants.Code.SELECT_CITY_RESUEST)));
     }
 }

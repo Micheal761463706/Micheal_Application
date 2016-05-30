@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.micheal.micheal_application.Activity.Baidu_Activity">
+    tools:context=".Fragment.Instrument.ui.Baidu_Activity">
 
     <HorizontalScrollView
         android:id="@+id/horizontalSV"
@@ -39,6 +39,21 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="定位"/>
+            <Button
+                android:id="@+id/Logo_Baidu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Logo位置"/>
+            <Button
+                android:id="@+id/biaozhu_Baidu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="地图标注"/>
+            <Button
+                android:id="@+id/textCover_Baidu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="文字覆盖物"/>
         </LinearLayout>
     </HorizontalScrollView>
 

@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 
-import com.micheal.micheal_application.Activity.Baidu_Activity;
+import com.micheal.micheal_application.Fragment.Instrument.ui.Baidu_Activity;
 import com.micheal.micheal_application.Adapter.BaseFragment;
 import com.micheal.micheal_application.R;
 

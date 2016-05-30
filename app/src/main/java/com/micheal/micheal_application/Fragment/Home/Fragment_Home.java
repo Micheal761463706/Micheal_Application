@@ -1,6 +1,8 @@
 package com.micheal.micheal_application.Fragment.Home;
 
+import android.annotation.TargetApi;
 import android.content.Intent;
+import android.os.Build;
 import android.support.v4.widget.DrawerLayout;
 import android.util.Log;
 import android.view.View;
@@ -70,10 +72,11 @@ public class Fragment_Home extends BaseFragment implements AdapterView.OnItemCli
          */
         ViewTreeObserver observer = tv.getViewTreeObserver();
         observer.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+            @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
             @Override
             public void onGlobalLayout() {
                 ViewTreeObserver obs = tv.getViewTreeObserver();
-                obs.removeGlobalOnLayoutListener(this);
+                obs.removeOnGlobalLayoutListener(this);
                 if(tv.getLineCount() > 2){
                     int lineEndIndex = tv.getLayout().getLineEnd(1);
                     String text = tv.getText().subSequence(0,lineEndIndex-6)+"......";
